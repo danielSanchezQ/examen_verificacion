@@ -14,9 +14,14 @@ public class DatabaseTalkie {
         m_jedis = new Jedis("localhost");
     }
 
-    public boolean store(String data_name,String data, String pwd )
+    public DatabaseTalkie(Jedis jedis)
     {
-        return true;
+        m_jedis = jedis;
+    }
+
+    public boolean store(String data_name, String data, String pwd )
+    {
+        return false;
 
     }
 
