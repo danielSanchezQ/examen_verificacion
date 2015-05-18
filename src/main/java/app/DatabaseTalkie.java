@@ -9,6 +9,9 @@ import java.security.MessageDigest;
  */
 
 public class DatabaseTalkie {
+    static private String KEY = "_key";
+    static private String PWD = "_pwd";
+
     private Jedis m_jedis;
 
     public DatabaseTalkie()
@@ -23,18 +26,18 @@ public class DatabaseTalkie {
 
     public boolean store(String data_name, String data, String pwd )
     {
-        Long ret = m_jedis.setnx(data_name+"_key", data);
+        Long ret = m_jedis.setnx(data_name+KEY, data);
         if (ret > 0) {
             try {
                 MessageDigest pwd_code = MessageDigest.getInstance("MD5");
                 pwd_code.update(pwd.getBytes());
-                String set_ret = m_jedis.set(data_name + "_pwd", pwd_code.digest().toString());
+                String set_ret = m_jedis.set(data_name+PWD, pwd_code.digest().toString());
 
                 return set_ret.equals("OK")? true: false;
             }
             catch (Exception e)
             {
-                m_jedis.del(data_name+"_key");
+                m_jedis.del(data_name+KEY);
                 return false;
             }
         }
@@ -44,7 +47,18 @@ public class DatabaseTalkie {
 
     public String retrieve(String data_name, String pwd)
     {
-        return "";
+        String data_pwd = m_jedis.get(data_name+PWD);
+        try {
+            MessageDigest pwd_code = MessageDigest.getInstance("MD5");
+            pwd_code.update(pwd.getBytes());
+            if (pwd_code.digest().toString().equals(data_pwd));
+            {
+                String ret = m_jedis.get(data_name+KEY);
+                if(!ret.equals("")) return ret;
+            }
+            return "";
+        }
+        catch (Exception e) {return "";}
     }
 
 
