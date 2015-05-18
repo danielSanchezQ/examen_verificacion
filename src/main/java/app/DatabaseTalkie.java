@@ -54,12 +54,9 @@ public class DatabaseTalkie {
             if (pwd_code.digest().toString().equals(data_pwd));
             {
                 String ret = m_jedis.get(data_name+KEY);
-                if(!ret.equals("")) return ret;
+                return ret;
             }
-            return "";
         }
         catch (Exception e) {return "";}
     }
-
-
 }

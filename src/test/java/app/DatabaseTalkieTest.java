@@ -25,7 +25,6 @@ public class DatabaseTalkieTest extends TestCase {
         dbt     = new DatabaseTalkie(jedis);
         when(jedis.setnx(anyString(), anyString()))  .thenReturn(new Long(1));
         when(jedis.set(anyString(), anyString()))   .thenReturn("OK");
-        when(jedis.get("test_key")).thenReturn("test_body");
         when(jedis.get(anyString())).thenReturn("");
         MessageDigest ret = MessageDigest.getInstance("MD5");
         ret.update("test".getBytes());
@@ -41,6 +40,7 @@ public class DatabaseTalkieTest extends TestCase {
     }
 
     public void testRetrieve() throws Exception {
+        when(jedis.get("test_key")).thenReturn("test_body");
         assertEquals(dbt.retrieve("test", "test"), "test_body");
     }
 
