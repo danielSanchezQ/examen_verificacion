@@ -17,6 +17,7 @@ public class DatabaseTalkie {
     public DatabaseTalkie()
     {
         m_jedis = new Jedis("10.93.1.69 ", 6379);
+        m_jedis.auth("WkS8Bkm9aj");
     }
 
     public DatabaseTalkie(Jedis jedis)
