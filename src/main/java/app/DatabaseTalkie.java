@@ -16,7 +16,7 @@ public class DatabaseTalkie {
 
     public DatabaseTalkie()
     {
-        m_jedis = new Jedis("localhost");
+        m_jedis = new Jedis("localhost", 26379);
     }
 
     public DatabaseTalkie(Jedis jedis)
