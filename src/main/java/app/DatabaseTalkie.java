@@ -16,7 +16,7 @@ public class DatabaseTalkie {
 
     public DatabaseTalkie()
     {
-        m_jedis = new Jedis("localhost", 26379);
+        m_jedis = new Jedis("10.93.1.69 ", 6379);
     }
 
     public DatabaseTalkie(Jedis jedis)
