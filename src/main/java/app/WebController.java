@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class WebController {
 
-    @RequestMapping(value = "/main", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView root()
     {
         return new ModelAndView("index");

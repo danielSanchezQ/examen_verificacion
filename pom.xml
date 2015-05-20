@@ -61,33 +61,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>com.jelastic</groupId>
-                <artifactId>jelastic-maven-plugin</artifactId>
-                <version>1.7</version>
-                <configuration>
-                    <email>3danimanimal@gmail.com</email>
-                    <password>8BIj0evX91</password>
-                    <context>testapp</context>
-                    <environment>examenverificacion</environment>
-                    <comment>fucking shit hope it works</comment>
-                    <api_hoster>app.mpaas.io</api_hoster>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>sonatype-oss-public</id>
-            <url>https://oss.sonatype.org/content/groups/public</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 </project>

@@ -16,8 +16,8 @@ public class DatabaseTalkie {
 
     public DatabaseTalkie()
     {
-        m_jedis = new Jedis("10.93.1.69 ", 6379);
-        m_jedis.auth("WkS8Bkm9aj");
+        m_jedis = new Jedis("localhost");
+        //m_jedis.auth("WkS8Bkm9aj");
     }
 
     public DatabaseTalkie(Jedis jedis)

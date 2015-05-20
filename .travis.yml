@@ -1,0 +1,10 @@
+language: java
+before_install:
+    apt-get install redis-server
+    redis-server
+
+deploy:
+  provider: openshift
+  user: 3danimanimal@gmail.com
+  password: putoruby
+  domain: dsq
