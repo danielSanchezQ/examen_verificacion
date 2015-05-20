@@ -1,4 +1,7 @@
 language: java
+
+sudo: true
+
 before_install:
     apt-get install redis-server
     redis-server
