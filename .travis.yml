@@ -21,8 +21,6 @@ script:
 
     mvn install
 
-    mvn deploy
-
 deploy:
   provider: openshift
   user: 3danimanimal@gmail.com
