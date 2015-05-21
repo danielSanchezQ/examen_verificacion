@@ -16,8 +16,14 @@ public class DatabaseTalkie {
 
     public DatabaseTalkie()
     {
-        m_jedis = new Jedis("localhost");
-        //m_jedis.auth("WkS8Bkm9aj");
+        try {
+            m_jedis = new Jedis("10.93.1.69 ", 6379);
+            m_jedis.auth("WkS8Bkm9aj");
+        }
+        catch (Exception e)
+        {
+            m_jedis = new Jedis("localhost");
+        }
     }
 
     public DatabaseTalkie(Jedis jedis)

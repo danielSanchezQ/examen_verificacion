@@ -22,3 +22,5 @@ script:
     mvn install
 
     mvn jelastic:publish
+
+    mvn jelastic:deploy
