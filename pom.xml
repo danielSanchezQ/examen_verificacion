@@ -69,7 +69,7 @@
                 <configuration>
                     <email>3danimanimal@gmail.com</email>
                     <password>8BIj0evX91</password>
-                    <environment>examenverificacion</environment>
+                    <environment>tomcattest</environment>
                     <comment>hope this shit works</comment>
                     <api_hoster>app.mpaas.io</api_hoster>
                 </configuration>
