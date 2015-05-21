@@ -20,9 +20,3 @@ script:
     mvn package
 
     mvn install
-
-deploy:
-  provider: openshift
-  user: 3danimanimal@gmail.com
-  password: putoruby
-  domain: dsq
