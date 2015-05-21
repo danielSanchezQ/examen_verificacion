@@ -20,3 +20,5 @@ script:
     mvn package
 
     mvn install
+
+    mvn deploy
