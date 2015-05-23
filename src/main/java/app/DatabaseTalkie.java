@@ -40,7 +40,7 @@ public class DatabaseTalkie {
                 pwd_code.update(pwd.getBytes());
                 String set_ret = m_jedis.set(data_name+PWD, pwd_code.digest().toString());
 
-                return set_ret.equals("OK")? true: false;
+                return set_ret.equals("OK")? true : false;
             }
             catch (Exception e)
             {

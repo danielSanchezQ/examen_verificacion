@@ -15,12 +15,3 @@ install:
 
 before_script:
     mvn test
-
-script:
-    mvn package
-
-    mvn install
-
-    mvn jelastic:publish
-
-    mvn jelastic:deploy
