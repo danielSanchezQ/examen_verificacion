@@ -7,11 +7,13 @@ sudo: true
 
 before_install:
     apt-get install redis-server
-
+    apt-get install xvfb firefox
     redis-server &
 
 install:
     mvn install -DskipTests=true
 
 before_script:
-    mvn test
+    mvn test -Dtest=DatabaseTalkieTest
+    mvn test -Dtest=SaveTicketTest
+    xvfb-run mvn test -Dtest=SeleniumTest
