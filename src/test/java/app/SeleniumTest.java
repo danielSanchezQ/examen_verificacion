@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -24,8 +25,8 @@ public class SeleniumTest {
 
     @Before
     public void setup() {
-        ChromeDriverManager.setup();
-        driver = new ChromeDriver();
+        //ChromeDriverManager.setup();
+        driver = new FirefoxDriver();
     }
 
 
