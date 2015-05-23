@@ -11,8 +11,9 @@ import java.security.MessageDigest;
  */
 @Component
 public class DatabaseTalkie {
-    static private String KEY = "_key";
-    static private String PWD = "_pwd";
+    static private String   KEY = "_key";
+    static private String   PWD = "_pwd";
+    static private int      h24 = 86400;
 
     private Jedis m_jedis;
 
@@ -39,9 +40,11 @@ public class DatabaseTalkie {
         Long ret = m_jedis.setnx(data_name+KEY, data);
         if (ret > 0) {
             try {
+                m_jedis.expire(data_name+KEY, h24);
                 MessageDigest pwd_code = MessageDigest.getInstance("MD5");
                 pwd_code.update(pwd.getBytes());
                 String set_ret = m_jedis.set(data_name+PWD, pwd_code.digest().toString());
+                m_jedis.expire(data_name+PWD, h24);
 
                 return set_ret.equals("OK")? true : false;
             }
