@@ -1,5 +1,7 @@
 package app;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 
 import java.security.MessageDigest;
@@ -7,7 +9,7 @@ import java.security.MessageDigest;
 /**
  * Created by netwave on 18/05/15.
  */
-
+@Component
 public class DatabaseTalkie {
     static private String KEY = "_key";
     static private String PWD = "_pwd";

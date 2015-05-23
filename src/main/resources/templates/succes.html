@@ -20,32 +20,14 @@
        
         <div class="col-lg-12 text-center v-center">
           
-          <h1>Save a ticket</h1>
-          
-          <br/><br/><br/>
+          <h1 id="ret_msg" th:text="${stored}">Save a ticket</h1>
 
-          <form method="post" action="/store" class="col-lg-12">
             <div class="input-group" style="width:340px;text-align:center;margin:0 auto;">
-                    <input class="form-control input-lg" name="TagName_s" id="TagName_s" placeholder="Enter a tag name" type="text"/>
-                    <input class="form-control input-lg" name="Data" id="Data" placeholder="Enter ticket data to store " type="text"/>
-                    <input class="form-control input-lg" name="Pwd_s" id="Pwd_s" placeholder="Enter a password" type="password"/>
-                    <input id="send_b" type="submit" value="Store" class="btn btn-lg btn-primary"/>
+				<form action="/" method="get">
+                    <button id="retbutton" class="btn btn-lg btn-primary" type="submit">Return</button>
+				</form>
             </div>
-          </form>
         </div>
-          <div class="col-lg-12 text-center v-center">
-
-              <h1>Retrieve a ticket</h1>
-              <br/><br/><br/>
-
-              <form method="post" action="/retrieve" class="col-lg-12">
-                  <div class="input-group" style="width:340px;text-align:center;margin:0 auto;">
-                      <input class="form-control input-lg" name="TagName_r" id="TagName_r" placeholder="Enter a tag name" type="text"/>
-                      <input class="form-control input-lg" name="Pwd_r" id="Pwd_r" placeholder="Enter a password" type="password"/>
-                      <button type="submit" class="btn btn-lg btn-primary">Retrieve</button>
-                  </div>
-              </form>
-          </div>
 
 
       </div> <!-- /row -->
