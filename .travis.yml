@@ -8,6 +8,8 @@ sudo: true
 before_install:
     apt-get install redis-server
 
+    apt-get install firefox
+
     apt-get install xvfb firefox
 
     redis-server &
