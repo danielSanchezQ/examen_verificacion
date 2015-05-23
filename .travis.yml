@@ -12,6 +12,8 @@ before_install:
 
     apt-get install xvfb firefox
 
+    export DISPLAY=:99.0
+
     redis-server &
 
 install:
