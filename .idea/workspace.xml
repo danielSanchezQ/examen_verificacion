@@ -41,8 +41,8 @@
       <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14634146">
-              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.24390244">
+              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -922,7 +922,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432412028521</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="yet another travis test (2)">
+      <created>1432412212972</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1432412212972</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1010,7 +1016,8 @@
     <MESSAGE value="configuring travis one more time" />
     <MESSAGE value="another travis test" />
     <MESSAGE value="yet another travis test (1)" />
-    <option name="LAST_COMMIT_MESSAGE" value="yet another travis test (1)" />
+    <MESSAGE value="yet another travis test (2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="yet another travis test (2)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1360,8 +1367,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14634146">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.24390244">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
           <folding />
         </state>
       </provider>

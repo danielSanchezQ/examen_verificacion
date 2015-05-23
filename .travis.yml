@@ -3,28 +3,26 @@ language: java
 jdk:
     - oraclejdk8
 
-sudo:
-    - true
+sudo: true
 
 before_install:
-    - apt-get install redis-server
+    apt-get install redis-server
 
-    - apt-get install firefox
+    apt-get install firefox
 
-    - apt-get install xvfb firefox
+    apt-get install xvfb firefox
 
-    - /etc/init.d/xvfb start
+    - "export DISPLAY=:99.0"
+    - "sh -e /etc/init.d/xvfb start"
 
-    - export DISPLAY=:99.0
-
-    - redis-server &
+    redis-server &
 
 install:
-    - mvn install -DskipTests=true
+    mvn install -DskipTests=true
 
 before_script:
-    - mvn test -Dtest=DatabaseTalkieTest
+    mvn test -Dtest=DatabaseTalkieTest
 
-    - mvn test -Dtest=SaveTicketTest
+    mvn test -Dtest=SaveTicketTest
 
-    - mvn test -Dtest=SeleniumTest
+    mvn test -Dtest=SeleniumTest
