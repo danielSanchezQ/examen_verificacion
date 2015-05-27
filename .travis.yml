@@ -24,5 +24,3 @@ before_script:
     mvn test -Dtest=DatabaseTalkieTest
 
     mvn test -Dtest=SaveTicketTest
-
-    mvn test -Dtest=SeleniumTest
