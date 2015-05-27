@@ -26,7 +26,7 @@ public class DatabaseTalkie {
         {
             m_jedis = new Jedis("localhost");
         }
-        //m_jedis.flushAll();
+        m_jedis.flushAll();
     }
 
     public DatabaseTalkie(Jedis jedis)
