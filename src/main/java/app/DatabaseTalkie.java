@@ -3,8 +3,7 @@ package app;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
-
-import java.security.MessageDigest;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  * Created by netwave on 18/05/15.
@@ -40,12 +39,9 @@ public class DatabaseTalkie {
         Long ret = m_jedis.setnx(data_name+KEY, data);
         if (ret > 0) {
             try {
-                m_jedis.expire(data_name+KEY, h24);
-                MessageDigest pwd_code = MessageDigest.getInstance("MD5");
-                pwd_code.update(pwd.getBytes());
-                String set_ret = m_jedis.set(data_name+PWD, pwd_code.digest().toString());
+                m_jedis.expire(data_name + KEY, h24);
+                String set_ret = m_jedis.set(data_name+PWD, DigestUtils.shaHex(pwd));
                 m_jedis.expire(data_name+PWD, h24);
-
                 return set_ret.equals("OK")? true : false;
             }
             catch (Exception e)
@@ -60,11 +56,10 @@ public class DatabaseTalkie {
 
     public String retrieve(String data_name, String pwd)
     {
-        String data_pwd = m_jedis.get(data_name+PWD);
         try {
-            MessageDigest pwd_code = MessageDigest.getInstance("MD5");
-            pwd_code.update(pwd.getBytes());
-            if (pwd_code.digest().toString().equals(data_pwd))
+            String data_pwd = m_jedis.get(data_name + PWD);
+            String pwd_md5 = DigestUtils.shaHex(pwd);
+            if (data_pwd.equals(pwd_md5))
             {
                 String ret = m_jedis.get(data_name+KEY);
                 return ret;
