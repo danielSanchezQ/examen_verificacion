@@ -64,11 +64,12 @@ public class DatabaseTalkie {
         try {
             MessageDigest pwd_code = MessageDigest.getInstance("MD5");
             pwd_code.update(pwd.getBytes());
-            if (pwd_code.digest().toString().equals(data_pwd));
+            if (pwd_code.digest().toString().equals(data_pwd))
             {
                 String ret = m_jedis.get(data_name+KEY);
                 return ret;
             }
+            return "";
         }
         catch (Exception e) {return "";}
     }
