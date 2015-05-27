@@ -8,13 +8,6 @@ sudo: true
 before_install:
     apt-get install redis-server
 
-    apt-get install firefox
-
-    apt-get install xvfb firefox
-
-    - "export DISPLAY=:99.0"
-    - "sh -e /etc/init.d/xvfb start"
-
     redis-server &
 
 install:
